@@ -49,6 +49,8 @@ Shichimito
 
 ## Run
 
+⚠️Please do version control and back up before doing.⚠️
+
 ```
 xsort ./xsort ./project.pbxproj
 ```
