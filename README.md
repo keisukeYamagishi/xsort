@@ -1,8 +1,8 @@
 # xsort
 
+[![](https://img.shields.io/badge/Twitter-O--Liker%20Error-blue.svg)](https://twitter.com/O_Linker_Error)
 [![](https://img.shields.io/badge/Language-Ruby-red.svg)](https://www.ruby-lang.org/ja/)
 [![](https://img.shields.io/apm/l/vim-mode.svg)](https://github.com/keisukeYamagishi/xsort/blob/master/LICENSE)
-[![](https://img.shields.io/badge/Twitter-O--Liker%20Error-blue.svg)](https://twitter.com/O_Linker_Error)
 
 ## Overview
 
@@ -32,9 +32,79 @@ $ git clone https://github.com/keisukeYamagishi/xsort.git
 
 ```
 
+## Usage 
+
+```
+
+Usage: xsort [-v] [<path>] [-o] 
+These are common detect commands used in various situations:
+xsort version: 1.0.1
+option:
+-v: display xsort version number
+-o: output result
+
+Regars !
+Shichimito
+```
+
 ## Run
 
 ```
-ruby test.tb
+xsort ./xsort ./project.pbxproj
+```
+
+this will cover files in the Xcode directory
+
+## Use it
+
+```
+
+./xsort path_to_project.pbxproj
+
+```
+
+## option
+
+***Display result log***
+
+if you want to display result log
+
+```
+./xsort ./path/to/project.pbxproj -o
+```
+
+result
+```
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BA218946A1F8E64C27B613CD /* Pods_Breris.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0B2DD76AFE7C2922950BB5D /* Pods_Breris.framework */; };
+		C704FFE71FB0A67D0043E7BD /* bggfg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C704FFE61FB0A67D0043E7BD /* bggfg.jpg */; };
+		C704FFE91FB0A68C0043E7BD /* world.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C704FFE81FB0A68C0043E7BD /* world.jpg */; };
+		C7080F921FFC317F0077A4AD /* TwitterAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7080F911FFC317F0077A4AD /* TwitterAuth.swift */; };
+		C7080FB21FFC97F60077A4AD /* Capture.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7080FB11FFC97F60077A4AD /* Capture.swift */; };
+		C7080FC81FFE49A30077A4AD /* checkmark-flat.png in Resources */ = {isa = PBXBuildFile; fileRef = C7080FC71FFE49A30077A4AD /* checkmark-flat.png */; };
+		C7080FCA1FFE4A0B0077A4AD /* TwtterStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7080FC91FFE4A0B0077A4AD /* TwtterStatus.swift */; };
+		C7080FCC1FFE4A200077A4AD /* TwitterStatus.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7080FCB1FFE4A200077A4AD /* TwitterStatus.xib */; };
+		C7080FCE1
+....... any
+..... any
+... any
+.. any
+any
+```
+
+***Display version number***
+
+```
+->> ./xsort -v
+
+Version: 1.0.1
 ```
 
