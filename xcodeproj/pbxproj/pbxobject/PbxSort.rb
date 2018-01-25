@@ -21,12 +21,6 @@ class PbxSort
             # ->> puts pbx.pbxBase
             # puts "children"
 
-            # pbx.children.each {|pbx|
-            #
-            #     puts pbx.childPbx
-            #
-            # }
-
             sort = pbx.children.sort{|pbx1, pbx2|
                 pbx1.name <=> pbx2.name
             }
@@ -52,10 +46,6 @@ class PbxSort
                 # puts pbx.childPbx
             # }
         }
-        # puts "\n\nSORTS\n\n"
-        # sorteds.each{|pbx|
-        #     puts pbx
-        # }
         return sorteds
     end
 

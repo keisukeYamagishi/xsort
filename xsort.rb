@@ -1,145 +1,33 @@
-require "./Emurate"
+#! /usr/bin/ruby
 
-class PbxGroup
+require "./xcodeproj/pbxproj/pbxobject/Pbxproj"
+require "./xcodeproj/pbxproj/pbxobject/PbxSort"
+require "./xcodeproj/pbxproj/pbxobject/PbxWrite"
+require "./version"
+require "./option"
 
-    def initialize
-        @parentPbx = ""
-        @parentName = ""
-        @parentUUID = ""
-        @pbxBase = ""
-        @children = Array.new
-    end
+option = Option.new(ARGV)
 
-    def parentPbx
-        @parentPbx
-    end
+puts option.path
 
-    def parentName
-        @parentName
-    end
-
-    def parentUUID
-        @parentUUID
-    end
-
-    def pbxBase
-        @pbxBase
-    end
-
-    def setParentName(name)
-        @parentName = name
-    end
-
-    def setParentUUID(uuid)
-        @parentUUID = uuid
-    end
-
-    def setParentPbx(pbx)
-        @parentPbx = pbx
-    end
-
-    def setPbxBase(base)
-        @pbxBase = base
-    end
-
-    def children
-        @children
-    end
-
-end
-
-class PbxChild
-
-    def initialize(uuid, name, childPbx)
-        @uuid = uuid
-        @name = name
-        @childPbx = childPbx
-    end
-
-    def uuid
-        @uuid
-    end
-
-    def name
-        @name
-    end
-
-    def childPbx
-        @childPbx
-    end
-
-end
-
-class Pbxproj
-
-    def initialize(path)
-        @path = path
-        @pbxGroups = Array.new
-    end
-
-    def parse ()
-
-        isPbxGroup = false
-        isPbxOneValue = false
-        isPbxChild = false
-        pbxValue = ""
-
-        File.open(@path, "r") do |pbx|
-            pbx.each_line do |pbx_line|
-                puts pbx_line
-                if pbx_line.index("/* End PBXGroup section */")
-                    isPbxGroup = false
-                end
-
-                # In PBX Group
-                if isPbxGroup == true
-
-                    if pbx_line.index(");")
-                        isPbxChild = false
-                    end
-
-                    if isPbxChild == true
-                        name = Emurate.emurates(pbx_line)
-                        uuid = Emurate.emurateUUID(pbx_line)
-                        @child = PbxChild.new(uuid,name,pbx_line)
-                        @group.children.push(@child)
-                    end
-
-                    # # Children
-                    if pbx_line.index("children = (")
-                        isPbxChild = true
-                    end
-
-                    if pbx_line.index(" */ = {")
-                        isPbxOneValue = true
-                        name = Emurate.emurates(pbx_line)
-                        uuid = Emurate.emurateUUID(pbx_line)
-                        @group = PbxGroup.new
-                        @group.setParentName(name)
-                        @group.setParentUUID(uuid)
-                        @group.setParentPbx(pbx_line)
-                    end
-
-                    if isPbxOneValue == true
-                        pbxValue << pbx_line
-                    end
-
-                    if pbx_line.index("};")
-                        isPbxOneValue = false
-                        @group.setPbxBase(pbxValue)
-                        @pbxGroups.push(@group)
-                        pbxValue = ""
-                    end
-                end
-
-                if pbx_line.index("/* Begin PBXGroup section */")
-                    isPbxGroup = true
-                end
-            end
-        end
-    end
-
-    def pbxGroups
-        @pbxGroups
-    end
+if option.options.length == 0 && option.path.length == 0
+    puts "Usage: xsort [-v] [<path>] [-o] "
+    puts "These are common detect commands used in various situations:"
+    puts "xsort version: #{Xsort::VERSION}"
+    puts "option:"
+    puts "-v: display xsort version number"
+    puts "-o: output result"
+    puts "\n"
+    puts "Regars !"
+elsif option.options.length == 1 && option.options[0] == "-v"
+    puts "Version: #{Xsort::VERSION}"
+elsif option.path.index(".pbxproj")
+    pbx = Pbxproj.new(option.path,option.isOut)
+    pbx.parse()
+    sort = PbxSort.new(pbx.pbxGroups)
+    s = sort.psort
+    write = PbxWrite.new(s,option.isOut)
+    write.overWrite
+else
+    puts "must select pbxproj file"
 end
