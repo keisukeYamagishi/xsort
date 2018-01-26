@@ -8,8 +8,6 @@ require "./option"
 
 option = Option.new(ARGV)
 
-puts option.path
-
 if option.options.length == 0 && option.path.length == 0
     puts "Usage: xsort [-v] [<path>] [-o] "
     puts "These are common detect commands used in various situations:"
@@ -21,7 +19,7 @@ if option.options.length == 0 && option.path.length == 0
     puts "Regars !"
 elsif option.options.length == 1 && option.options[0] == "-v"
     puts "Version: #{Xsort::VERSION}"
-elsif option.path.index(".pbxproj")
+elsif option.path.index("project.pbxproj")
     pbx = Pbxproj.new(option.path,option.isOut)
     pbx.parse()
     sort = PbxSort.new(pbx.pbxGroups)
@@ -29,5 +27,7 @@ elsif option.path.index(".pbxproj")
     write = PbxWrite.new(option.path,s,option.isOut)
     write.overWrite
 else
+    puts "(*_*).oO not pbxproj file"
     puts "must select pbxproj file"
+    puts "($_$).oO omg"
 end

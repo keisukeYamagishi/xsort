@@ -76,7 +76,6 @@ end
 class Pbxproj
 
     def initialize(path, out)
-        puts "#{out}"
         @path = path
         @isOut = out
         @pbxGroups = Array.new
@@ -89,62 +88,69 @@ class Pbxproj
         isPbxChild = false
         pbxValue = ""
 
-        File.open(@path, "r") do |pbx|
-            pbx.each_line do |pbx_line|
+        begin
+            File.open(@path, "r") do |pbx|
+                pbx.each_line do |pbx_line|
 
-                if @isOut == true
-                    puts pbx_line
-                end
-
-                if pbx_line.index("/* End PBXGroup section */")
-                    isPbxGroup = false
-                end
-
-                # In PBX Group
-                if isPbxGroup == true
-
-                    if pbx_line.index(");")
-                        isPbxChild = false
+                    if @isOut == true
+                        puts pbx_line
                     end
 
-                    if isPbxChild == true
-                        name = Emurate.emurates(pbx_line)
-                        uuid = Emurate.emurateUUID(pbx_line)
-                        @child = PbxChild.new(uuid,name,pbx_line)
-                        @group.setChildren(@child)
+                    if pbx_line.index("/* End PBXGroup section */")
+                        isPbxGroup = false
                     end
 
-                    # Children
-                    if pbx_line.index("children = (")
-                        isPbxChild = true
+                    # In PBX Group
+                    if isPbxGroup == true
+
+                        if pbx_line.index(");")
+                            isPbxChild = false
+                        end
+
+                        if isPbxChild == true
+                            name = Emurate.emurates(pbx_line)
+                            uuid = Emurate.emurateUUID(pbx_line)
+                            @child = PbxChild.new(uuid,name,pbx_line)
+                            @group.setChildren(@child)
+                        end
+
+                        # Children
+                        if pbx_line.index("children = (")
+                            isPbxChild = true
+                        end
+
+                        if pbx_line.index(" = {")
+                            isPbxOneValue = true
+                            name = Emurate.emurates(pbx_line)
+                            uuid = Emurate.emurateUUID(pbx_line)
+                            @group = PbxGroup.new
+                            @group.setParentName(name)
+                            @group.setParentUUID(uuid)
+                            @group.setParentPbx(pbx_line)
+                        end
+
+                        if isPbxOneValue == true
+                            pbxValue << pbx_line
+                        end
+
+                        if pbx_line.index("};")
+                            isPbxOneValue = false
+                            @group.setPbxBase(pbxValue)
+                            @pbxGroups.push(@group)
+                            pbxValue = ""
+                        end
                     end
 
-                    if pbx_line.index(" = {")
-                        isPbxOneValue = true
-                        name = Emurate.emurates(pbx_line)
-                        uuid = Emurate.emurateUUID(pbx_line)
-                        @group = PbxGroup.new
-                        @group.setParentName(name)
-                        @group.setParentUUID(uuid)
-                        @group.setParentPbx(pbx_line)
+                    if pbx_line.index("/* Begin PBXGroup section */")
+                        isPbxGroup = true
                     end
-
-                    if isPbxOneValue == true
-                        pbxValue << pbx_line
-                    end
-
-                    if pbx_line.index("};")
-                        isPbxOneValue = false
-                        @group.setPbxBase(pbxValue)
-                        @pbxGroups.push(@group)
-                        pbxValue = ""
-                    end
-                end
-
-                if pbx_line.index("/* Begin PBXGroup section */")
-                    isPbxGroup = true
                 end
             end
+        rescue IOError => ioerr
+            puts "Error #{ioerr.message}"
+        rescue SystemCallError => sysCallErr
+            puts "Failuer: reason #{sysCallErr.message}"
+            puts "The entered path is invalid."
         end
     end
 

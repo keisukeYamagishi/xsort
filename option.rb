@@ -17,9 +17,20 @@ class Option
                 end
                 @options.push(argv)
             else
-                @path = argv
+                @path = createPath(argv)
             end
         }
+    end
+
+    def createPath(path)
+        if path.index(".pbxproj")
+            return path
+        else
+            pbxproj = path.dup
+            pbxproj << "/project.pbxproj"
+            return pbxproj
+        end
+
     end
 
     def options
