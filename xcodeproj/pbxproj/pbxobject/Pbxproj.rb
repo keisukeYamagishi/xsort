@@ -42,6 +42,9 @@ class PbxGroup
         @pbxBase = base
     end
 
+    def setChildren(pbx)
+        @children.push(pbx)
+    end
     def children
         @children
     end
@@ -108,15 +111,15 @@ class Pbxproj
                         name = Emurate.emurates(pbx_line)
                         uuid = Emurate.emurateUUID(pbx_line)
                         @child = PbxChild.new(uuid,name,pbx_line)
-                        @group.children.push(@child)
+                        @group.setChildren(@child)
                     end
 
-                    # # Children
+                    # Children
                     if pbx_line.index("children = (")
                         isPbxChild = true
                     end
 
-                    if pbx_line.index(" */ = {")
+                    if pbx_line.index(" = {")
                         isPbxOneValue = true
                         name = Emurate.emurates(pbx_line)
                         uuid = Emurate.emurateUUID(pbx_line)
