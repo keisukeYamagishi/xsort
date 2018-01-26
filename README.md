@@ -55,7 +55,9 @@ Shichimito
 xsort ./xsort ./project.pbxproj
 ```
 
-this will cover files in the Xcode directory
+this will sort files in the Xcode directory
+
+Output.pbxproj file will be output so copy and paste it.
 
 ## Use it
 
