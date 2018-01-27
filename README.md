@@ -38,13 +38,14 @@ $ git clone https://github.com/keisukeYamagishi/xsort.git
 
 Usage: xsort [-v] [<path>] [-o] 
 These are common detect commands used in various situations:
-xsort version: 1.0.1
+xsort version: 1.1.1
 option:
 -v: display xsort version number
 -o: output result
+-r: Just extracting output.pbxproj will not write to pbxproj of Xcode project
 
 Regars !
-Shichimito
+
 ```
 
 ## Run
@@ -103,6 +104,11 @@ result
 .. any
 any
 ```
+
+**Looking at Xcode**
+
+![](https://github.com/keisukeYamagishi/xsort/blob/master/res/result.png)
+
 
 ***Display version number***
 
