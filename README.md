@@ -110,6 +110,17 @@ any
 ![](https://github.com/keisukeYamagishi/xsort/blob/master/res/result.png)
 
 
+***Use -r options***
+
+Do not overwrite pbxproj of Xcode project and output.pbxproj.
+You can test the output pbxproj file.
+
+```
+./xsort ../App/App.xcodeproj -r
+```
+
+
+
 ***Display version number***
 
 ```
