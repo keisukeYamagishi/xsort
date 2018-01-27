@@ -1,9 +1,11 @@
+
 class PbxWrite
 
-    def initialize(path,pbx, out)
+    def initialize(path,pbx, out,write)
         @pbx = pbx
         @isOut = out
         @path = path
+        @write = write
     end
 
     def overWrite
@@ -49,7 +51,10 @@ class PbxWrite
     end
 
     def writeFile(value)
-        File.open("./output.pbxproj","w") do |write|
+        if @write == true
+            @path = "./output.pbxproj"
+        end
+        File.open(@path,"w") do |write|
             write.puts(value)
         end
     end

@@ -15,6 +15,7 @@ if option.options.length == 0 && option.path.length == 0
     puts "option:"
     puts "-v: display xsort version number"
     puts "-o: output result"
+    puts "-r: Just extracting output.pbxproj will not write to pbxproj of Xcode project"
     puts "\n"
     puts "Regars !"
 elsif option.options.length == 1 && option.options[0] == "-v"
@@ -24,7 +25,7 @@ elsif option.path.index("project.pbxproj")
     pbx.parse()
     sort = PbxSort.new(pbx.pbxGroups)
     s = sort.psort
-    write = PbxWrite.new(option.path,s,option.isOut)
+    write = PbxWrite.new(option.path,s,option.isOut, option.notOverWrite)
     write.overWrite
 else
     puts "(*_*).oO not pbxproj file"
