@@ -3,6 +3,7 @@ class Option
     def initialize(argv)
         @isOut = false
         argvs = Array.new
+        @notOverWrite = false
 
         argv.each_with_index do |arg, i|
             argvs.push(arg)
@@ -12,9 +13,13 @@ class Option
         @path = ""
         argvs.each{|argv|
             if argv.index("-")
-                if argv.index("o")
+
+                if argv == "-o"
                     @isOut = true
+                elsif argv == "-r"
+                    @notOverWrite = true
                 end
+
                 @options.push(argv)
             else
                 @path = createPath(argv)
@@ -43,6 +48,10 @@ class Option
 
     def isOut
         @isOut
+    end
+
+    def notOverWrite
+        @notOverWrite
     end
 
 end
