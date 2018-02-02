@@ -7,7 +7,7 @@
 # Build
 |OS		 |Result	   |
 |:---------------|:----------------|
-| ***Linux*** |[[![Build Status](https://travis-ci.org/keisukeYamagishi/xsort.svg?branch=master)](https://travis-ci.org/keisukeYamagishi/xsort)
+| ***Linux*** |[![Build Status](https://travis-ci.org/keisukeYamagishi/xsort.svg?branch=master)](https://travis-ci.org/keisukeYamagishi/xsort)
 
 ## Overview
 
