@@ -1,3 +1,5 @@
+require File.expand_path(File.dirname(__FILE__) + "/Emurate")
+
 module Xcodeproj
     module Pbxproj
         module PbxObject
@@ -103,7 +105,7 @@ module Xcodeproj
                     begin
                         File.open(@path, "r") do |pbx|
                             pbx.each_line do |pbx_line|
-                                
+
                                 if @isOut == true
                                     puts pbx_line
                                 end
@@ -171,28 +173,5 @@ module Xcodeproj
                 end
             end
         end
-    end
-end
-
-class Emurate
-
-    def self.emurates(chars)
-        splits = chars.split(" ")
-        isName = false
-        splits.each { |char|
-            if char == "*/"
-                isName = false
-            end
-            if isName == true
-                return char
-            end
-            if char == "/*"
-                isName = true
-            end
-        }
-    end
-
-    def self.emurateUUID(char)
-        return char.split(" ").first
     end
 end
