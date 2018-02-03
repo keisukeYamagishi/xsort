@@ -1,4 +1,3 @@
-
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "xsort/version"
@@ -14,10 +13,9 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/keisukeYamagishi/xsort"
   spec.license       = "MIT"
 
-  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
-  # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
-    spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
+    spec.metadata["allowed_push_host"] = "https://github.com/keisukeYamagishi/xsort"
+    spec.metadata["twitter_uri"] = "https://twitter.com/O_Linker_Error"
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
       "public gem pushes."
