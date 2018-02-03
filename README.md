@@ -21,7 +21,7 @@ Download and install xsort with the following.
  gem install xsort
 ```
 
-[](https://rubygems.org/gems/xsort)
+[https://rubygems.org/gems/xsort](https://rubygems.org/gems/xsort)
 
 
 ## git clone
