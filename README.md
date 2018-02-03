@@ -15,11 +15,14 @@ Sort the file tree next to Xcode by file name.
 
 ## Gem Installation
 
-Download and install rake with the following.
+Download and install xsort with the following.
 
 ```
  gem install xsort
 ```
+
+[](https://rubygems.org/gems/xsort)
+
 
 ## git clone
 
@@ -66,19 +69,24 @@ Regars !
 ⚠️Please do version control and back up before doing.⚠️
 
 ```
-xsort ./xsort ./project.pbxproj
+xsort ./XcodeApps.xcodeproj
 ```
 
-this will sort files in the Xcode directory
+***You can sort them like the following image***
 
-Output.pbxproj file will be output so copy and paste it.
+<img src="https://github.com/keisukeYamagishi/xsort/blob/feature/add_doc/doc/result.png" width="50%" height="50%">
+
+
 
 ## Use it
 
 ```
+xsort ./XcodeApps.xcodeproj　
+```
+or
 
-./xsort path_to_project.pbxproj
-
+```
+xsort ./XcodeApps.xcodeproj/project.pbxproj
 ```
 
 ## option
@@ -88,10 +96,11 @@ Output.pbxproj file will be output so copy and paste it.
 if you want to display result log
 
 ```
-./xsort ./path/to/project.pbxproj -o
+xsort ./XcodeApps.xcodeproj -o
 ```
 
-result
+The following logs are output.
+
 ```
 // !$*UTF8*$!
 {
@@ -118,21 +127,15 @@ result
 any
 ```
 
-**Looking at Xcode**
-
-![](https://github.com/keisukeYamagishi/xsort/blob/master/res/result.png)
-
-
 ***Use -r options***
 
-Do not overwrite pbxproj of Xcode project and output.pbxproj.
-You can test the output pbxproj file.
+It does not sort Xcode's project file directly.
+Output files sorted.
+You can copy and paste the output.pbxproj file output to the target project.pbxproj file and test it.
 
 ```
 ./xsort ../App/App.xcodeproj -r
 ```
-
-
 
 ***Display version number***
 
