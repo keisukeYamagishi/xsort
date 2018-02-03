@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
-    f.match(%r{^(test|spec|features|bin/console|bin/setup|exe/xsort)/})
+    f.match(%r{^(test|spec|features|doc)/})
   end
 
   spec.bindir        = "bin"
