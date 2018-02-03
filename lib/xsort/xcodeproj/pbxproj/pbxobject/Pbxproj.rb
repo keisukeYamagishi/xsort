@@ -1,4 +1,4 @@
-require './xsort/Emurate'
+require File.expand_path(File.dirname(__FILE__) + "/Emurate")
 
 module Xcodeproj
     module Pbxproj
