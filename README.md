@@ -37,11 +37,11 @@ $ git clone https://github.com/keisukeYamagishi/xsort.git
 
 ```
 
-## Usage 
+## Usage
 
 ```
 
-Usage: xsort [-v] [<path>] [-o] 
+Usage: xsort [-v] [<path>] [-o]
 These are common detect commands used in various situations:
 xsort version: 1.1.1
 option:
@@ -133,4 +133,3 @@ You can test the output pbxproj file.
 
 Version: 1.0.1
 ```
-

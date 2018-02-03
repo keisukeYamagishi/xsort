@@ -1,8 +1,9 @@
-require "./xsort/xcodeproj/pbxproj/pbxobject/Pbxproj"
-require "./xsort/xcodeproj/pbxproj/pbxobject/PbxSort"
-require "./xsort/xcodeproj/pbxproj/pbxobject/PbxWrite"
-require "./xsort/version"
-require "./xsort/option"
+require 'bundler/setup'
+require "xsort/xcodeproj/pbxproj/pbxobject/Pbxproj"
+require "xsort/xcodeproj/pbxproj/pbxobject/PbxSort"
+require "xsort/xcodeproj/pbxproj/pbxobject/PbxWrite"
+require "xsort/version"
+require "xsort/option"
 
 module Xsort
     class XsortMain
@@ -24,6 +25,7 @@ module Xsort
             elsif @option.options.length == 1 && @option.options[0] == "-v"
                 puts "Version: #{Xsort::VERSION}"
             elsif @option.path.index("project.pbxproj")
+
                 pbx = Xcodeproj::Pbxproj::PbxObject::Pbxproj.new(@option.path,@option.isOut)
                 pbx.parse()
                 sort = Xcodeproj::Pbxproj::PbxObject::PbxSort.new(pbx.pbxGroups)

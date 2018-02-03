@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require "/xsort"
+require "xsort"
 
 Xsort::XsortMain.new(ARGV).execute
