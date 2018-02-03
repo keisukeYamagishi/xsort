@@ -13,6 +13,14 @@
 
 Sort the file tree next to Xcode by file name.
 
+## Gem Installation
+
+Download and install rake with the following.
+
+```
+ gem install xsort
+```
+
 ## git clone
 
 ***Via SSH***: For those who plan on regularly making direct commits, cloning over SSH may provide a better experience (which requires uploading SSH keys to GitHub):
