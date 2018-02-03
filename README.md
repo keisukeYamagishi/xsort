@@ -4,6 +4,11 @@
 [![](https://img.shields.io/badge/Language-Ruby-red.svg)](https://www.ruby-lang.org/ja/)
 [![](https://img.shields.io/apm/l/vim-mode.svg)](https://github.com/keisukeYamagishi/xsort/blob/master/LICENSE)
 
+# Build
+|OS		 |Result	   |
+|:---------------|:----------------|
+| ***Linux*** |[![Build Status](https://travis-ci.org/keisukeYamagishi/xsort.svg?branch=master)](https://travis-ci.org/keisukeYamagishi/xsort)
+
 ## Overview
 
 Sort the file tree next to Xcode by file name.
@@ -32,11 +37,11 @@ $ git clone https://github.com/keisukeYamagishi/xsort.git
 
 ```
 
-## Usage 
+## Usage
 
 ```
 
-Usage: xsort [-v] [<path>] [-o] 
+Usage: xsort [-v] [<path>] [-o]
 These are common detect commands used in various situations:
 xsort version: 1.1.1
 option:
@@ -128,4 +133,3 @@ You can test the output pbxproj file.
 
 Version: 1.0.1
 ```
-
