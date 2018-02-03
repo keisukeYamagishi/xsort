@@ -13,18 +13,10 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/keisukeYamagishi/xsort"
   spec.license       = "MIT"
 
-  if spec.respond_to?(:metadata)
-    spec.metadata["allowed_push_host"] = "https://github.com/keisukeYamagishi/xsort"
-    spec.metadata["twitter_uri"] = "https://twitter.com/O_Linker_Error"
-  else
-    raise "RubyGems 2.0 or newer is required to protect against " \
-      "public gem pushes."
-  end
-
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features|bin/console|bin/setup|exe/xsort)/})
   end
-  
+
   spec.bindir        = "bin"
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
