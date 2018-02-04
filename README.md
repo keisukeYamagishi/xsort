@@ -134,7 +134,7 @@ Output files sorted.
 You can copy and paste the output.pbxproj file output to the target project.pbxproj file and test it.
 
 ```
-./xsort ../App/App.xcodeproj -r
+xsort ../App/App.xcodeproj -r
 ```
 
 ***Display version number***
