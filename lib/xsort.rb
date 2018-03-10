@@ -1,4 +1,3 @@
-require 'bundler/setup'
 require "xsort/xcodeproj/pbxproj/pbxobject/Pbxproj"
 require "xsort/xcodeproj/pbxproj/pbxobject/PbxSort"
 require "xsort/xcodeproj/pbxproj/pbxobject/PbxWrite"
