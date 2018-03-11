@@ -74,7 +74,7 @@ xsort ./XcodeApps.xcodeproj
 
 ***You can sort them like the following image***
 
-<img src="https://github.com/keisukeYamagishi/xsort/blob/feature/add_doc/doc/result.png" width="50%" height="50%">
+<img src="https://github.com/keisukeYamagishi/xsort/blob/master/doc/result.png" width="50%" height="50%">
 
 
 
