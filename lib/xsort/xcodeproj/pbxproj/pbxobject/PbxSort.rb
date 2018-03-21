@@ -1,3 +1,5 @@
+require File.expand_path(File.dirname(__FILE__) + "/Pbxproj")
+
 module Xcodeproj
     module Pbxproj
         module PbxObject
@@ -10,6 +12,8 @@ module Xcodeproj
                 def psort
 
                     sorteds = Array.new
+                    productPbx = ""
+
                     @pbxs.each{ |pbx|
                         # puts "parent PBX"
                         # puts pbx.parentName
@@ -28,19 +32,24 @@ module Xcodeproj
                         child = Array.new
                         sort.each {|pbx|
 
-                            child.push(pbx.childPbx)
+                            if pbx.name == "Products"
+                                productPbx = pbx.childPbx
+                            else
+                                child.push(pbx.childPbx)
+                            end
+                            # child.push(pbx.childPbx)
                             # puts pbx.uuid
                             # puts pbx.name
                             # ->> puts pbx.childPbx
                         }
+
+                        if productPbx.length != 0
+                            child.push(productPbx)
+                            productPbx = ""
+                        end
+
                         sorteds.push(childrenSort(pbx.pbxBase,child))
-                        # pbx.children.each {|pbx|
-                        #
-                        #
-                            # # puts pbx.uuid
-                            # # puts pbx.name
-                            # puts pbx.childPbx
-                        # }
+
                     }
                     return sorteds
                 end
@@ -50,24 +59,24 @@ module Xcodeproj
                     pbxSplit = children.split("\n")
                     isPbxChild = false
                     num = 0
-                    pbxSplit.each{|pbx_line|
+                    pbxSplit.each{|pbxLine|
 
-                        if pbx_line.index(");")
+                        if pbxLine.index(");")
                             isPbxChild = false
                         end
 
                         if isPbxChild == true
-                            pbx_line = sort[num]
+                            pbxLine = sort[num]
                             num += 1
                         else
-                            pbx_line << "\n"
+                            pbxLine << "\n"
                         end
 
                         # Children
-                        if pbx_line.index("children = (")
+                        if pbxLine.index("children = (")
                             isPbxChild = true
                         end
-                        pbx << pbx_line
+                        pbx << pbxLine
                     }
                     return pbx
                 end
