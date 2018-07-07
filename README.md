@@ -64,6 +64,23 @@ Regars !
 
 ```
 
+# Hot fix ***********************
+
+mac OSX to HighSierra,
+When xsort is executed, the following error occurs.
+
+```
+->> xsort
+-bash: /usr/local/bin/xsort: /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/bin/ruby: bad interpreter: No such file or directory
+```
+
+In that case, please execute the following.
+
+```
+sudo gem update --system -n /usr/local/bin
+sudo gem install -n /usr/local/bin xsort
+```
+
 ## Run
 
 ⚠️Please do version control and back up before doing.⚠️
