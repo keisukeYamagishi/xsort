@@ -65,6 +65,7 @@ Regars !
 ```
 
 # Hot fix ***********************
+#### （☝ ՞ਊ ՞）☝ Wow What's this!
 
 mac OSX to HighSierra,
 When xsort is executed, the following error occurs.
@@ -73,6 +74,8 @@ When xsort is executed, the following error occurs.
 ->> xsort
 -bash: /usr/local/bin/xsort: /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/bin/ruby: bad interpreter: No such file or directory
 ```
+
+#### （☝ ՞ਊ ՞）☝ Wow What's this!
 
 In that case, please execute the following.
 
