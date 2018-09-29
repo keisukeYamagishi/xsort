@@ -11,11 +11,14 @@ module Xcodeproj
                     @write = write
                 end
 
+                # We will overwrite the pbxobject that re-sorted Xcode's xcodeproj into a file.
+                #
+                #
                 def overWrite
                     isPbxGroup = false
                     pbxValue = ""
                     num = 0
-
+                    isSuccess = true
                     begin
                         File.open(@path, "r") do |pbx|
                             pbx.each_line do |pbx_line|
@@ -46,10 +49,15 @@ module Xcodeproj
                         writeFile(pbxValue)
 
                     rescue IOError => ioerr
+                        isSuccess = false
                         puts "Error #{ioerr.message}"
                     rescue SystemCallError => sysCallErr
+                        isSuccess = false
                         puts "Failuer: reason #{sysCallErr.message}"
                         puts "The entered path is invalid."
+                    end
+                    if isSuccess == true
+                        puts "Xsort Successful (☝ ՞ਊ ՞）☝!"
                     end
                 end
 
