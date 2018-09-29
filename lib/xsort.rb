@@ -1,5 +1,6 @@
 require "xsort/xcodeproj/pbxproj/pbxobject/Pbxproj"
 require "xsort/xcodeproj/pbxproj/pbxobject/PbxSort"
 require "xsort/xcodeproj/pbxproj/pbxobject/PbxWrite"
+require "xsort/xcodeproj/pbxproj/pbxobject/Emurate"
 require "xsort/version"
 require "xsort/option"
