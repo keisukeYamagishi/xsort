@@ -57,7 +57,7 @@ module Xcodeproj
                         puts "The entered path is invalid."
                     end
                     if isSuccess == true
-                        puts "Xsort Successful (☝ ՞ਊ ՞）☝!"
+                        puts "\e[36mXsort Successful (☝ ՞ਊ ՞）☝!!!\e[0m"
                     end
                 end
 
