@@ -55,7 +55,7 @@ $ git clone https://github.com/keisukeYamagishi/xsort.git
 
 Usage: xsort [-v] [<path>] [-o]
 These are common detect commands used in various situations:
-xsort version: 1.1.1
+xsort version: 1.2.3
 option:
 -v: display xsort version number
 -o: output result
@@ -86,8 +86,6 @@ sudo gem install -n /usr/local/bin xsort
 ```
 
 ## Run
-
-⚠️Please do version control and back up before doing.⚠️
 
 ```
 xsort ./XcodeApps.xcodeproj
@@ -163,5 +161,5 @@ xsort ../App/App.xcodeproj -r
 ```
 ->> ./xsort -v
 
-Version: 1.2.1
+Version: 1.2.3
 ```
