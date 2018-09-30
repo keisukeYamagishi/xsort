@@ -50,14 +50,14 @@ module Xcodeproj
 
                     rescue IOError => ioerr
                         isSuccess = false
-                        puts "Error #{ioerr.message}"
+                        puts "Error \e[31m#{ioerr.message}\e[0m"
                     rescue SystemCallError => sysCallErr
                         isSuccess = false
-                        puts "Failuer: reason #{sysCallErr.message}"
+                        puts "Failuer! reason: \n\e[31m#{sysCallErr.message}\e[0m"
                         puts "The entered path is invalid."
                     end
                     if isSuccess == true
-                        puts "Xsort Successful (☝ ՞ਊ ՞）☝!"
+                        puts "\e[36mXsort Successful (☝ ՞ਊ ՞）☝!!!\e[0m"
                     end
                 end
 
