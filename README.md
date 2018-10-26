@@ -76,7 +76,7 @@ When xsort is executed, the following error occurs.
 -bash: /usr/local/bin/xsort: /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/bin/ruby: bad interpreter: No such file or directory
 ```
 
-#### （☝ ՞ਊ ՞）☝ Wow What's this!
+#### （☝ ՞ਊ ՞）☝ Wow What's this!!!
 
 In that case, please execute the following.
 
