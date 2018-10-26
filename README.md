@@ -66,7 +66,7 @@ Regars !
 ```
 
 # Hot fix ***********************
-#### （☝ ՞ਊ ՞）☝ Wow What's this!
+#### （☝ ՞ਊ ՞）☝ Wow What's this!!!
 
 mac OSX to HighSierra,
 When xsort is executed, the following error occurs.
