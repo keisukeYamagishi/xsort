@@ -17,7 +17,8 @@ def execute(option)
         puts "Version: #{Xsort::VERSION}"
     elsif option.path.index("project.pbxproj")
         # excute Xsort
-        Xsort::Sortproj.new(option).sort
+        xsort = Xsort::Sortproj.new(option.path)
+        xsort.sort(option.stdout,option.notOverwrite)
     else
         puts "(*_*).oO not pbxproj file"
         puts "must select pbxproj file"

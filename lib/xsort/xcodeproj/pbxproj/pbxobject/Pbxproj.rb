@@ -87,9 +87,9 @@ module Xcodeproj
         module PbxObject
             class Pbxproj
 
-                def initialize(path, out)
+                def initialize(path, stdout)
                     @path = path
-                    @isOut = out
+                    @stdout = stdout
                     @pbxGroups = Array.new
                 end
 
@@ -104,7 +104,7 @@ module Xcodeproj
                         File.open(@path, "r") do |pbx|
                             pbx.each_line do |pbx_line|
 
-                                if @isOut == true
+                                if @stdout == true
                                     puts pbx_line
                                 end
 
