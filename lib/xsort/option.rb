@@ -1,9 +1,9 @@
 class Option
 
     def initialize(argv)
-        @isOut = false
+        @stdout = false
         argvs = Array.new
-        @notOverWrite = false
+        @notOverwrite = false
 
         argv.each_with_index do |arg, i|
             argvs.push(arg)
@@ -15,7 +15,7 @@ class Option
             if argv.index("-")
 
                 if argv == "-o"
-                    @isOut = true
+                    @stdout = true
                 elsif argv == "-r"
                     @notOverWrite = true
                 end
@@ -46,12 +46,12 @@ class Option
         @path
     end
 
-    def isOut
-        @isOut
+    def stdout
+        @stdout
     end
 
-    def notOverWrite
-        @notOverWrite
+    def notOverwrite
+        @notOverwrite
     end
 
 end

@@ -4,9 +4,9 @@ module Xcodeproj
 
             class PbxWrite
 
-                def initialize(path,pbx, out,write)
+                def initialize(path,pbx, stdout,write)
                     @pbx = pbx
-                    @isOut = out
+                    @stdout = stdout
                     @path = path
                     @write = write
                 end
@@ -42,7 +42,7 @@ module Xcodeproj
                             end
                         end
 
-                        if @isOut == true
+                        if @stdout == true
                             puts pbxValue
                         end
 
