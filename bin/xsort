@@ -21,7 +21,7 @@ def execute(option)
         xsort.sort(option.stdout,option.notOverwrite)
     else
         puts "(*_*).oO not pbxproj file"
-        puts "must select pbxproj file"
+        puts "(☝ ՞ਊ ՞）☝!!!must select pbxproj file(☝ ՞ਊ ՞）☝!!!"
         puts "($_$).oO omg"
     end
 end
