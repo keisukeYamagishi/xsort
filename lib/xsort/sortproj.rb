@@ -5,7 +5,7 @@
 # Copyright (c) 2018 -  Keisuke Yamagishi. project authors
 # Licensed under MIT LICENCE
 #
-# See https://github.com/keisukeYamagishi/xsort/blob/develop/LICENSE.txt for license information
+# See https://github.com/keisukeYamagishi/xsort/blob/master/LICENSE.txt for license information
 #
 #===------------------------------------------------------------------(☝ ՞ਊ ՞）☝/
 
