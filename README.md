@@ -1,9 +1,13 @@
+<p align="center">
+	
+<img src="https://github.com/keisukeYamagishi/xsort/blob/master/doc/xsort.png" width="40%" height="40%">
 
-<img src="https://github.com/keisukeYamagishi/xsort/blob/master/doc/xsort.png">
 
 [![](https://img.shields.io/badge/Twitter-O--Liker%20Error-blue.svg)](https://twitter.com/O_Linker_Error)
 [![](https://img.shields.io/badge/Language-Ruby-red.svg)](https://www.ruby-lang.org/ja/)
 [![](https://img.shields.io/apm/l/vim-mode.svg)](https://github.com/keisukeYamagishi/xsort/blob/master/LICENSE)
+
+</p>
 
 # Build
 |OS		 |Result	   |
