@@ -167,3 +167,10 @@ xsort ../App/App.xcodeproj -r
 
 Version: 1.2.4
 ```
+
+## Contributing
+
+We welcome your ideas and bug reports.
+You can either create a [pull request](https://github.com/keisukeYamagishi/xsort/pulls) or create and report an [issue](https://github.com/keisukeYamagishi/xsort/issues).
+
+We look forward to your ideas.
