@@ -23,14 +23,13 @@ class Option
         @options = Array.new
         @path = ""
         argvs.each{|argv|
-            if argv.index("-")
+            if !argv.index(".xcodeproj")
 
                 if argv == "-o"
                     @stdout = true
                 elsif argv == "-r"
                     @notOverWrite = true
                 end
-
                 @options.push(argv)
             else
                 @path = createPath(argv)
