@@ -28,7 +28,7 @@ class Option
                 if argv == "-o"
                     @stdout = true
                 elsif argv == "-r"
-                    @notOverWrite = true
+                    @notOverwrite = true
                 end
                 @options.push(argv)
             else
