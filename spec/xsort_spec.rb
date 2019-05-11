@@ -3,7 +3,17 @@ RSpec.describe Xsort do
     expect(Xsort::VERSION).not_to be nil
   end
 
-  it "does something useful" do
-    expect(false).to eq(true)
+  it "path validity" do
+    option = Option.new(['../App/Xsort-Sample.xcodeproj/'])
+    expect(option.path.include?("project.pbxproj")).to be true
+
+    option = Option.new(['../App/XsortSample.xcodeproj/'])
+    expect(option.path.include?("project.pbxproj")).to be true
+
+    option = Option.new(['../App/Xsort-Sample.xcodeproj/', '-r'])
+    expect(option.notOverwrite).to be true
+
+    option = Option.new(['../App/Xsort-Sample.xcodeproj/', '-o'])
+    expect(option.stdout).to be true
   end
 end
