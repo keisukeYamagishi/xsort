@@ -59,7 +59,7 @@ $ git clone https://github.com/keisukeYamagishi/xsort.git
 
 Usage: xsort [-v] [<path>] [-o]
 These are common detect commands used in various situations:
-xsort version: 1.2.3
+xsort version: 1.2.5
 option:
 -v: display xsort version number
 -o: output result
@@ -165,7 +165,7 @@ xsort ../App/App.xcodeproj -r
 ```
 ->> ./xsort -v
 
-Version: 1.2.4
+Version: 1.2.5
 ```
 
 ## Contributing
