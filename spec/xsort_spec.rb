@@ -5,7 +5,6 @@ RSpec.describe Xsort do
 
   it "path validity" do
     option = Option.new(['../App/Xsort-Sample.xcodeproj/'])
-    puts "Include: #{option.path.include?("project.pbxproj")}"
     expect(option.path.include?("project.pbxproj")).to be true
 
     option = Option.new(['../App/XsortSample.xcodeproj/'])
