@@ -133,8 +133,7 @@ module Xcodeproj
                                     if isPbxChild == true
                                         name = Emurate.emurates(pbx_line)
                                         uuid = Emurate.emurateUUID(pbx_line)
-                                        pbxName = File.basename(name, File.extname(name))
-                                        @child = Xcodeproj::Pbxproj::PbxObject::PbxChild.new(uuid,pbxName,pbx_line)
+                                        @child = Xcodeproj::Pbxproj::PbxObject::PbxChild.new(uuid,name,pbx_line)
                                         @group.setChildren(@child)
                                     end
 
