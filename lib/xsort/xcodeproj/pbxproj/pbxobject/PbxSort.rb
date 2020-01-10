@@ -33,7 +33,9 @@ module Xcodeproj
                         # puts pbx.parentUUID
                         # ->> puts pbx.pbxBase
                         # puts "children"
-
+                        # pbx.children.each { |pbxC|
+                        #     puts pbxC.name
+                        # }
                         sort = pbx.children.sort{|pbx1, pbx2|
                             pbx1.name <=> pbx2.name
                         }
