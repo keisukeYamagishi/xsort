@@ -10,5 +10,5 @@
 *.rspec_status
 *.gem
 *.lock
-*.pbxproj
+output.pbxproj
 .vscode/
