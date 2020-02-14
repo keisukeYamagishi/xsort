@@ -56,16 +56,16 @@ $ git clone https://github.com/keisukeYamagishi/xsort.git
 ## Usage
 
 ```
-
+xsort version: 1.4.0
+xsort sort an Xcode file tree
 Usage: xsort [-v] [<path>] [-o]
-These are common detect commands used in various situations:
-xsort version: 1.2.5
+The following options can be used with Xsort.
 option:
 -v: display xsort version number
 -o: output result
--r: Just extracting output.pbxproj will not write to pbxproj of Xcode project
+-r: Just only extracting output.pbxproj will not write to pbxproj of Xcode project so safty
 
-Regars !
+King Regards!
 
 ```
 
