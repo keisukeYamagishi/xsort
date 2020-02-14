@@ -11,3 +11,4 @@ jobs:
     - stage: test
       script: 
         - bundle exec rspec
+        - gem build xsort.gemspec
