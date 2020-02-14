@@ -165,7 +165,7 @@ xsort ../App/App.xcodeproj -r
 ```
 ->> ./xsort -v
 
-Version: 1.2.5
+Version: 1.4.0
 ```
 
 ## Contributing
