@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    xsort (1.2.5)
+    xsort (1.4.0)
 
 GEM
   remote: https://rubygems.org/
