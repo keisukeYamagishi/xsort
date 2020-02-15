@@ -15,39 +15,12 @@ module Xcodeproj
             class PbxGroup
 
                 def initialize
-                    @parentPbx = ""
-                    @parentName = ""
-                    @parentUUID = ""
                     @pbxBase = ""
                     @children = Array.new
                 end
 
-                def parentPbx
-                    @parentPbx
-                end
-
-                def parentName
-                    @parentName
-                end
-
-                def parentUUID
-                    @parentUUID
-                end
-
                 def pbxBase
                     @pbxBase
-                end
-
-                def setParentName(name)
-                    @parentName = name
-                end
-
-                def setParentUUID(uuid)
-                    @parentUUID = uuid
-                end
-
-                def setParentPbx(pbx)
-                    @parentPbx = pbx
                 end
 
                 def setPbxBase(base)
@@ -70,14 +43,9 @@ module Xcodeproj
         module PbxObject
             class PbxChild
 
-                def initialize(uuid, name, childPbx)
-                    @uuid = uuid
+                def initialize(name, childPbx)
                     @name = name
                     @childPbx = childPbx
-                end
-
-                def uuid
-                    @uuid
                 end
 
                 def name
@@ -132,8 +100,7 @@ module Xcodeproj
 
                                     if isPbxChild == true
                                         name = Emurate.emurates(pbx_line)
-                                        uuid = Emurate.emurateUUID(pbx_line)
-                                        @child = Xcodeproj::Pbxproj::PbxObject::PbxChild.new(uuid,name,pbx_line)
+                                        @child = Xcodeproj::Pbxproj::PbxObject::PbxChild.new(name,pbx_line)
                                         @group.setChildren(@child)
                                     end
 
@@ -145,11 +112,7 @@ module Xcodeproj
                                     if pbx_line.index(" = {")
                                         isPbxOneValue = true
                                         name = Emurate.emurates(pbx_line)
-                                        uuid = Emurate.emurateUUID(pbx_line)
-                                        @group = Xcodeproj::Pbxproj::PbxObject::PbxGroup.new
-                                        @group.setParentName(name)
-                                        @group.setParentUUID(uuid)
-                                        @group.setParentPbx(pbx_line)
+                                        @group = Xcodeproj::Pbxproj::PbxObject::PbxGroup.new                                        
                                     end
 
                                     if isPbxOneValue == true

@@ -29,12 +29,7 @@ module Xcodeproj
                         end
                     }
                 end
-
-                def self.emurateUUID(char)
-                    return char.split(" ").first
-                end
             end
-
         end
     end
 end

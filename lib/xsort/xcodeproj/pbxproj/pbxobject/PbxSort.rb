@@ -24,18 +24,6 @@ module Xcodeproj
                     productPbx = ""
 
                     @pbxs.each{ |pbx|
-                        # puts "parent PBX"
-                        # puts pbx.parentName
-                        # puts pbx.parentUUID
-                        # puts pbx.parentPbx
-                        # puts pbx.parentPbx
-                        # puts pbx.parentName
-                        # puts pbx.parentUUID
-                        # ->> puts pbx.pbxBase
-                        # puts "children"
-                        # pbx.children.each { |pbxC|
-                        #     puts pbxC.name
-                        # }
                         sort = pbx.children.sort{|pbx1, pbx2|
                             pbx1.name <=> pbx2.name
                         }
@@ -48,10 +36,6 @@ module Xcodeproj
                             else
                                 child.push(pbx.childPbx)
                             end
-                            # child.push(pbx.childPbx)
-                            # puts pbx.uuid
-                            # puts pbx.name
-                            # ->> puts pbx.childPbx
                         }
 
                         if productPbx.length != 0
