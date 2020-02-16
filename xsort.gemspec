@@ -12,6 +12,8 @@ Gem::Specification.new do |spec|
   spec.description   = %q{Sort the file tree next to Xcode by file name.}
   spec.homepage      = "https://github.com/keisukeYamagishi/xsort"
   spec.license       = "MIT"
+  spec.required_ruby_version     = ">= 2.3.7"
+  spec.required_rubygems_version = ">= 2.5.2.3"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features|doc)/})
