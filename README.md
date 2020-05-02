@@ -35,22 +35,16 @@ Download and install xsort with the following.
 
 ```
 $ mkdir gitrepo
-
 $ cd gitrepo
-
 $ git clone git@github.com:keisukeYamagishi/xsort.git
-
 ```
 
 ***Via https***: For those checking out sources as read-only, HTTPS works best:
 
 ```
 $ mkdir gitrepo
-
 $ cd gitrepo
-
 $ git clone https://github.com/keisukeYamagishi/xsort.git
-
 ```
 
 ## Usage
@@ -66,7 +60,6 @@ option:
 -r: Just only extracting output.pbxproj will not write to pbxproj of Xcode project so safty
 
 King Regards!
-
 ```
 
 # Hot fix ***********************
@@ -164,7 +157,6 @@ xsort ../App/App.xcodeproj -r
 
 ```
 ->> ./xsort -v
-
 Version: 1.4.0
 ```
 
