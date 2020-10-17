@@ -96,6 +96,8 @@ xsort ./XcodeApps.xcodeproj
 
 ## Use it
 
+***⚠️You should make a backup before you use it.⚠️***
+
 ```
 xsort ./XcodeApps.xcodeproj　
 ```
