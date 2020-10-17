@@ -9,6 +9,6 @@
 # rspec failure tracking
 *.rspec_status
 *.gem
-*.lock
+Gemfile.lock
 output.pbxproj
 .vscode/
