@@ -3,7 +3,7 @@ language: ruby
 rvm:
   - 2.3.7
 before_install: 
-- gem install bundler -v 1.16.0
+- gem install bundler -v 1.17.2
 - bundle install
 
 jobs:
