@@ -3,7 +3,7 @@
 <img src="https://github.com/keisukeYamagishi/xsort/blob/master/doc/xsort.png" width="40%" height="40%">
 
 
-[![](https://img.shields.io/badge/twitter-brew__0__O-blue.svg)](https://twitter.com/brew_0_O)
+[![](https://img.shields.io/badge/twitter-brew__0__O-blue.svg)](https://twitter.com/jelly_0_o)
 [![](https://img.shields.io/badge/Language-Ruby-red.svg)](https://www.ruby-lang.org/ja/)
 [![](https://img.shields.io/apm/l/vim-mode.svg)](https://github.com/keisukeYamagishi/xsort/blob/master/LICENSE)
 
