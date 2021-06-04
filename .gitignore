@@ -11,6 +11,7 @@
 *.gem
 output.pbxproj
 .vscode/
+Gemfile.lock
 
 # Xcode
 #
