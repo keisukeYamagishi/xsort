@@ -36,6 +36,6 @@ jobs:
     - name: bundle install
       run: bundle install
     - name: Run tests
-      run: bundle exec rake
+      run: bundle exec rspec
     - name: Build gem
       run: gem build xsort.gemspec 
