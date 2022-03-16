@@ -9,8 +9,9 @@
 #
 #===------------------------------------------------------------------(☝ ՞ਊ ՞）☝/
 
+##
 class Option
-
+    attr_accessor :options, :path, :stdout, :notOverwrite
     def initialize(argv)
         @stdout = false
         argvs = Array.new
@@ -24,7 +25,6 @@ class Option
         @path = ""
         argvs.each{|argv|
             if !argv.index(".xcodeproj")
-
                 if argv == "-o"
                     @stdout = true
                 elsif argv == "-r"
@@ -45,23 +45,5 @@ class Option
             pbxproj << "/project.pbxproj"
             return pbxproj
         end
-
     end
-
-    def options
-        @options
-    end
-
-    def path
-        @path
-    end
-
-    def stdout
-        @stdout
-    end
-
-    def notOverwrite
-        @notOverwrite
-    end
-
 end

@@ -31,6 +31,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		90A8C61A27E1AC8C00926C1B /* ObjC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ObjC.storyboard; sourceTree = "<group>"; };
 		C74A121123C5CC6E006F1CC9 /* XcodeProj */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = XcodeProj; sourceTree = BUILT_PRODUCTS_DIR; };
 		C74A121423C5CC6E006F1CC9 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		C74A121D23C5CC96006F1CC9 /* XcodeProj-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XcodeProj-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -94,6 +95,7 @@
 				C74A122323C5CCBF006F1CC9 /* ObjC.cpp */,
 				C7CA428B23C8523E006BCB2F /* A.c */,
 				C74A122423C5CCBF006F1CC9 /* ObjC.hpp */,
+				90A8C61A27E1AC8C00926C1B /* ObjC.storyboard */,
 			);
 			path = XcodeProj;
 			sourceTree = "<group>";

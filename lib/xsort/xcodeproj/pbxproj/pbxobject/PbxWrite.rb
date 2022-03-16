@@ -12,9 +12,7 @@
 module Xcodeproj
     module Pbxproj
         module PbxObject
-
             class PbxWrite
-
                 def initialize(path,pbx, stdout,write)
                     @pbx = pbx
                     @stdout = stdout
