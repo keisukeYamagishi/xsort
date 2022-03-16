@@ -13,25 +13,10 @@ module Xcodeproj
     module Pbxproj
         module PbxObject
             class PbxGroup
-
+                attr_accessor :pbxBase, :children
                 def initialize
                     @pbxBase = ""
                     @children = Array.new
-                end
-
-                def pbxBase
-                    @pbxBase
-                end
-
-                def setPbxBase(base)
-                    @pbxBase = base
-                end
-
-                def setChildren(pbx)
-                    @children.push(pbx)
-                end
-                def children
-                    @children
                 end
             end
         end
@@ -42,20 +27,11 @@ module Xcodeproj
     module Pbxproj
         module PbxObject
             class PbxChild
-
+                attr_accessor :name, :childPbx
                 def initialize(name, childPbx)
                     @name = name
                     @childPbx = childPbx
                 end
-
-                def name
-                    @name
-                end
-
-                def childPbx
-                    @childPbx
-                end
-
             end
         end
     end
@@ -65,7 +41,6 @@ module Xcodeproj
     module Pbxproj
         module PbxObject
             class Pbxproj
-
                 def initialize(path, stdout)
                     @path = path
                     @stdout = stdout
@@ -101,7 +76,7 @@ module Xcodeproj
                                     if isPbxChild == true
                                         name = Emurate.emurates(pbx_line)
                                         @child = Xcodeproj::Pbxproj::PbxObject::PbxChild.new(name,pbx_line)
-                                        @group.setChildren(@child)
+                                        @group.children.push(@child)
                                     end
 
                                     # Children
@@ -121,7 +96,7 @@ module Xcodeproj
 
                                     if pbx_line.index("};")
                                         isPbxOneValue = false
-                                        @group.setPbxBase(pbxValue)
+                                        @group.pbxBase = pbxValue
                                         @pbxGroups.push(@group)
                                         pbxValue = ""
                                     end
