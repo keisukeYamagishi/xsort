@@ -41,9 +41,8 @@ module Xcodeproj
     module Pbxproj
         module PbxObject
             class Pbxproj
-                def initialize(path, stdout)
+                def initialize(path)
                     @path = path
-                    @stdout = stdout
                     @pbxGroups = Array.new
                 end
 
@@ -57,11 +56,6 @@ module Xcodeproj
                     begin
                         File.open(@path, "r") do |pbx|
                             pbx.each_line do |pbx_line|
-
-                                if @stdout == true
-                                    puts pbx_line
-                                end
-
                                 if pbx_line.index("/* End PBXGroup section */")
                                     isPbxGroup = false
                                 end
@@ -107,11 +101,10 @@ module Xcodeproj
                                 end
                             end
                         end
-                    rescue IOError => ioerr
-                        puts "Error #{ioerr.message}"
-                    rescue SystemCallError => sysCallErr
-                        puts "Failuer: reason #{sysCallErr.message}"
-                        puts "The entered path is invalid."
+                    rescue IOError => error
+                        raise error
+                    rescue SystemCallError => error
+                        raise error
                     end
                 end
 

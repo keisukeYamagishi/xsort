@@ -27,7 +27,16 @@ RSpec.describe Xsort do
   end
 
   def xsortExecute(option)
-    xsort = Xsort::Sortproj.new(option.path)
-    xsort.sort(option.stdout,option.notOverwrite)
+    begin
+      Xsort::Sortproj.sort(option.path,option.stdout,option.notOverwrite)
+    rescue IOError => ioerr
+      puts "(*_*).oO Oh no Exception!"
+      puts "(*_*).oO reason: \e[31m#{ioerr.message}\e[0m"
+    rescue SystemCallError => sysCallErr
+      puts "\e[31m(*_*).oO Oh no Exception!\e[0m"
+      puts "\e[31m(*_*).oO Failuer! reason: \n#{sysCallErr.message}\e[0m"
+    else
+      puts "\e[36mXsort Successful (☝ ՞ਊ ՞）☝!!!\e[0m"
+    end
   end
 end
