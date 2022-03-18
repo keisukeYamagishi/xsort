@@ -11,15 +11,15 @@
 
 module Xsort
     class Sortproj
-
+        include Xcodeproj::Pbxproj::PbxObject
         def self.sort (path, stdout, notOverwrite)
             puts path
             begin
-                pbxproj = Xcodeproj::Pbxproj::PbxObject::Pbxproj.new(path)
+                pbxproj = Pbxproj.new(path)
                 pbxproj.parse
-                sort = Xcodeproj::Pbxproj::PbxObject::PbxSort.new(pbxproj.pbxGroups)
+                sort = PbxSort.new(pbxproj.pbxGroups)
                 pbxObject = sort.psort
-                write = Xcodeproj::Pbxproj::PbxObject::PbxWrite.new(path,pbxObject,stdout,notOverwrite)
+                write = PbxWrite.new(path,pbxObject,stdout,notOverwrite)
                 write.overWrite
             rescue IOError => error
                 raise error
