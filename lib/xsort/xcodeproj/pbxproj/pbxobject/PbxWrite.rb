@@ -27,7 +27,6 @@ module Xcodeproj
                     isPbxGroup = false
                     pbxValue = ""
                     num = 0
-                    isSuccess = true
                     begin
                         File.open(@path, "r") do |pbx|
                             pbx.each_line do |pbx_line|
@@ -46,7 +45,6 @@ module Xcodeproj
                                 if pbx_line.index("/* Begin PBXGroup section */")
                                     isPbxGroup = true
                                 end
-
                                 pbxValue << pbx_line
                             end
                         end
@@ -57,16 +55,10 @@ module Xcodeproj
 
                         writeFile(pbxValue)
 
-                    rescue IOError => ioerr
-                        isSuccess = false
-                        puts "Error \e[31m#{ioerr.message}\e[0m"
-                    rescue SystemCallError => sysCallErr
-                        isSuccess = false
-                        puts "Failuer! reason: \n\e[31m#{sysCallErr.message}\e[0m"
-                        puts "The entered path is invalid."
-                    end
-                    if isSuccess == true
-                        puts "\e[36mXsort Successful (☝ ՞ਊ ՞）☝!!!\e[0m"
+                    rescue IOError => error
+                        raise error
+                    rescue SystemCallError => error
+                        raise error                        
                     end
                 end
 
