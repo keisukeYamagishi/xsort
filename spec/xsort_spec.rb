@@ -1,3 +1,5 @@
+include Xcodeproj::Pbxproj::PbxObject
+
 RSpec.describe Xsort do
   it "has a version number" do
     expect(Xsort::VERSION).not_to be nil
@@ -20,10 +22,44 @@ RSpec.describe Xsort do
   end
 
   it "standard out put" do
-    option = Option.new(['./test/XcodeProj/XcodeProj.xcodeproj', '-o'])    
+    option = Option.new(['./test/XcodeProj/XcodeProj.xcodeproj', '-o'])
     puts option.stdout
     expect(option.stdout).to be true
     xsortExecute option
+  end
+
+  it "permission denied file pbxprojo parse class" do
+    option = Option.new(['/test/Permission/Permission.xcodeproj'])
+    pbxproj = Pbxproj.new(option.path)
+    expect { pbxproj.parse }.to raise_error(SystemCallError)
+  end
+
+  it "no such file or directory pbxprojo parse class" do
+    option = Option.new(['/test/noSuchFile.xcodeproj'])
+    pbxproj = Pbxproj.new(option.path)
+    expect { pbxproj.parse }.to raise_error(SystemCallError)
+  end
+
+  it "permission denied file pbx write class" do
+    validOption = Option.new(['./test/XcodeProj/XcodeProj.xcodeproj'])    
+    invalidOption = Option.new(['/test/Permission/Permission.xcodeproj'])
+    pbxproj = Pbxproj.new(validOption.path)
+    pbxproj.parse
+    sort = PbxSort.new(pbxproj.pbxGroups)
+    pbxObject = sort.psort
+    write = PbxWrite.new(invalidOption.path,pbxObject,invalidOption.stdout,invalidOption.notOverwrite)
+    expect { write.overWrite }.to raise_error(SystemCallError)
+  end
+
+  it "no such file or directory pbx write class" do
+    validOption = Option.new(['./test/XcodeProj/XcodeProj.xcodeproj'])    
+    invalidOption = Option.new(['/test/noSuchDirectory.xcodeproj'])
+    pbxproj = Pbxproj.new(validOption.path)
+    pbxproj.parse
+    sort = PbxSort.new(pbxproj.pbxGroups)
+    pbxObject = sort.psort
+    write = PbxWrite.new(invalidOption.path,pbxObject,invalidOption.stdout,invalidOption.notOverwrite)
+    expect { write.overWrite }.to raise_error(SystemCallError)
   end
 
   def xsortExecute(option)
