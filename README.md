@@ -1,6 +1,6 @@
 <p align="center">
 	
-<img src="https://github.com/keisukeYamagishi/xsort/blob/master/doc/xsort.png" width="40%" height="40%">
+<img src="https://user-images.githubusercontent.com/5553852/159388128-8c3178c3-0d2d-462f-880a-f922650af40e.png" width="40%" height="40%">
 
 [![](https://img.shields.io/badge/HP-shichimitoucarashi-00acee)](https://shichimitoucarashi.com/)
 [![](https://img.shields.io/badge/Language-Ruby-red.svg)](https://www.ruby-lang.org/ja/)
@@ -89,7 +89,7 @@ xsort ./XcodeApps.xcodeproj
 
 ***You can sort them like the following image***
 
-<img src="https://github.com/keisukeYamagishi/xsort/blob/master/doc/result.png" width="50%" height="50%">
+<img src="https://user-images.githubusercontent.com/5553852/159388217-872e0749-bd86-4f15-b210-efcf29082130.png" width="50%" height="50%">
 
 
 
