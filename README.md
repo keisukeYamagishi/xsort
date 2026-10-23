@@ -59,6 +59,12 @@ option:
 
 King Regards!
 ```
+## Test
+
+```
+cd ./project-root-path
+rspec
+```
 
 # Hot fix ***********************
 #### （☝ ՞ਊ ՞）☝ Wow What's this!!!
