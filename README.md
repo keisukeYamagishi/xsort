@@ -2,16 +2,15 @@
 	
 <img src="https://user-images.githubusercontent.com/5553852/159388128-8c3178c3-0d2d-462f-880a-f922650af40e.png" width="40%" height="40%">
 
-[![](https://img.shields.io/badge/HP-shichimitoucarashi-00acee)](https://shichimitoucarashi.com/)
 [![](https://img.shields.io/badge/Language-Ruby-red.svg)](https://www.ruby-lang.org/ja/)
-[![](https://img.shields.io/apm/l/vim-mode.svg)](https://github.com/keisukeYamagishi/xsort/blob/master/LICENSE)
+[![](https://img.shields.io/badge/LICENSE-MIT-green)](https://github.com/keisukeYamagishi/xsort/blob/master/LICENSE)
 
 </p>
 
 # Build
 |OS		 |Result	   |
 |:---------------|:----------------|
-| ***Linux*** |[![Build Status](https://travis-ci.org/keisukeYamagishi/xsort.svg?branch=master)](https://travis-ci.org/keisukeYamagishi/xsort)
+| ***Linux*** |[![Ruby](https://github.com/keisukeYamagishi/xsort/actions/workflows/ruby.yml/badge.svg)](https://github.com/keisukeYamagishi/xsort/actions/workflows/ruby.yml)|
 
 ## Overview
 
