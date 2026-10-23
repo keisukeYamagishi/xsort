@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		90BE1C29308A4BE6009343A9 /* File2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BE1C28308A4BE6009343A9 /* File2.swift */; };
+		90BE1C2B308A4BEC009343A9 /* File12.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BE1C2A308A4BEC009343A9 /* File12.swift */; };
+		90BE1C2D308A4BF5009343A9 /* File1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BE1C2C308A4BF5009343A9 /* File1.swift */; };
+		90BE1C2F308A4E9F009343A9 /* File0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BE1C2E308A4E9F009343A9 /* File0.swift */; };
+		90BE1C31308A4EA7009343A9 /* File34.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BE1C30308A4EA7009343A9 /* File34.swift */; };
 		C74A121523C5CC6E006F1CC9 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74A121423C5CC6E006F1CC9 /* main.swift */; };
 		C74A121F23C5CC96006F1CC9 /* ObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = C74A121E23C5CC96006F1CC9 /* ObjC.m */; };
 		C74A122223C5CCAF006F1CC9 /* ObjC.metal in Sources */ = {isa = PBXBuildFile; fileRef = C74A122123C5CCAF006F1CC9 /* ObjC.metal */; };
@@ -32,6 +37,11 @@
 
 /* Begin PBXFileReference section */
 		90A8C61A27E1AC8C00926C1B /* ObjC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ObjC.storyboard; sourceTree = "<group>"; };
+		90BE1C28308A4BE6009343A9 /* File2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File2.swift; sourceTree = "<group>"; };
+		90BE1C2A308A4BEC009343A9 /* File12.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File12.swift; sourceTree = "<group>"; };
+		90BE1C2C308A4BF5009343A9 /* File1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File1.swift; sourceTree = "<group>"; };
+		90BE1C2E308A4E9F009343A9 /* File0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File0.swift; sourceTree = "<group>"; };
+		90BE1C30308A4EA7009343A9 /* File34.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File34.swift; sourceTree = "<group>"; };
 		C74A121123C5CC6E006F1CC9 /* XcodeProj */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = XcodeProj; sourceTree = BUILT_PRODUCTS_DIR; };
 		C74A121423C5CC6E006F1CC9 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		C74A121D23C5CC96006F1CC9 /* XcodeProj-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XcodeProj-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -96,6 +106,11 @@
 				C7CA428B23C8523E006BCB2F /* A.c */,
 				C74A122423C5CCBF006F1CC9 /* ObjC.hpp */,
 				90A8C61A27E1AC8C00926C1B /* ObjC.storyboard */,
+				90BE1C28308A4BE6009343A9 /* File2.swift */,
+				90BE1C2E308A4E9F009343A9 /* File0.swift */,
+				90BE1C30308A4EA7009343A9 /* File34.swift */,
+				90BE1C2A308A4BEC009343A9 /* File12.swift */,
+				90BE1C2C308A4BF5009343A9 /* File1.swift */,
 			);
 			path = XcodeProj;
 			sourceTree = "<group>";
@@ -159,13 +174,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90BE1C31308A4EA7009343A9 /* File34.swift in Sources */,
+				90BE1C2F308A4E9F009343A9 /* File0.swift in Sources */,
 				C7CA428F23C85278006BCB2F /* Demo.cpp in Sources */,
 				C74A122723C5CCC9006F1CC9 /* ObjC.c in Sources */,
 				C74A121523C5CC6E006F1CC9 /* main.swift in Sources */,
 				C74A122A23C5CCF3006F1CC9 /* Demo.swift in Sources */,
+				90BE1C29308A4BE6009343A9 /* File2.swift in Sources */,
 				C74A122223C5CCAF006F1CC9 /* ObjC.metal in Sources */,
 				C74A121F23C5CC96006F1CC9 /* ObjC.m in Sources */,
+				90BE1C2D308A4BF5009343A9 /* File1.swift in Sources */,
 				C7CA428C23C8523E006BCB2F /* A.c in Sources */,
+				90BE1C2B308A4BEC009343A9 /* File12.swift in Sources */,
 				C74A122523C5CCBF006F1CC9 /* ObjC.cpp in Sources */,
 				C74A122C23C5CCF9006F1CC9 /* A.swift in Sources */,
 			);

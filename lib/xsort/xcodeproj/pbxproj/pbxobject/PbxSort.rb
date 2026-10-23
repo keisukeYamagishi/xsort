@@ -25,7 +25,7 @@ module Xcodeproj
 
                     @pbxs.each{ |pbx|
                         sort = pbx.children.sort{|pbx1, pbx2|
-                            pbx1.name <=> pbx2.name
+                            natural_sort_key(pbx1.name) <=> natural_sort_key(pbx2.name)
                         }
 
                         child = Array.new
@@ -74,6 +74,12 @@ module Xcodeproj
                         pbx << pbxLine
                     }
                     return pbx
+                end
+
+                def natural_sort_key(name)
+                    name.scan(/\d+|\D+/).map do |part|
+                        part.match?(/\A\d+\z/) ? [0, part.to_i] : [1, part]
+                    end
                 end
             end
         end
