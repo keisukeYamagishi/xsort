@@ -103,7 +103,7 @@ xsort ./XcodeApps.xcodeproj
 ***⚠️You should make a backup before you use it.⚠️***
 
 ```
-xsort ./XcodeApps.xcodeproj　
+xsort ./XcodeApps.xcodeproj
 ```
 or
 
@@ -163,7 +163,7 @@ xsort ../App/App.xcodeproj -r
 
 ```
 ->> ./xsort -v
-Version: 1.4.
+Version: 1.4.4
 ```
 
 ## Contributing
